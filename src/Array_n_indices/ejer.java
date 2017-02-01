@@ -11,7 +11,7 @@ public class ejer {
 
 		rellenaArray(arrayMulti);
 
-		System.out.println("¿Por que nÃºmero deseas multiplicar sus elementos?");
+		System.out.println("¿Por que número deseas multiplicar sus elementos?");
 		int producto = leerNum();
 
 		imprimeArray(arrayMulti);
