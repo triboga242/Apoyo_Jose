@@ -5,37 +5,43 @@ import java.util.Scanner;
 public class ejer {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		
-		System.out.println("Â¿De que tamaÃ±o desea el array?");
-		int []arrayMulti=new int[leerNum()];
-			//rellenar con num aleatorio
+
+		System.out.println("¿De que tamaño desea el array?");
+		int[] arrayMulti = new int[leerNum()];
+
 		rellenaArray(arrayMulti);
-		
-		System.out.println("Â¿Por que nÃºmero deseas multiplicar sus elementos?");
-		int producto=leerNum();
-		//multiArray (arrayMulti, producto);
-		
-		imprimeArray (arrayMulti);
-		
-		//System.out.print(" ");
-		for (int i=0;i<=arrayMulti.length-1;i++){
-		System.out.print("x "+producto+"\t");
+
+		System.out.println("¿Por que nÃºmero deseas multiplicar sus elementos?");
+		int producto = leerNum();
+
+		imprimeArray(arrayMulti);
+
+		for (int i = 0; i <= arrayMulti.length - 1; i++) {
+			System.out.print("x " + producto + "\t");
 		}
 		System.out.println("");
-		
+
 		imprimeArray(multiArray(arrayMulti, producto));
-		
+
 	}
-	public static int []rellenaArray(int []array){
-		
-		
-		for(int f=0;f<array.length;f++){
-			array[f]=(int)(Math.random()*100 + 1);
+
+	/**
+	 * Esto es una función que rellena el array
+	 * @param array Array a rellenar
+	 * @return Array rellenado
+	 */
+	public static int[] rellenaArray(int[] array) {
+
+		for (int f = 0; f < array.length; f++) {
+			array[f] = (int) (Math.random() * 100 + 1);
 		}
 		return array;
 	}
-	
+
+	/**
+	 * Lee un número por consola y lo devuelve
+	 * @return Número leído por consola
+	 */
 	public static int leerNum() {
 
 		@SuppressWarnings("resource")
@@ -50,39 +56,34 @@ public class ejer {
 			try {
 				num = (int) Float.parseFloat(entrada);
 				error = false;
-				} catch (NumberFormatException ne) {
+			} catch (NumberFormatException ne) {
 				error = true;
 				System.out.println("Error no has introducido un numero.");
-				} catch (Exception e) {
+			} catch (Exception e) {
 				error = true;
 				System.out.println("Error generico, revisa la excepcion.");
-				}
-				//if (num<0){
-					//error=true;
-					//System.out.println("Introduce un numero positivo.");
-				//}
-			
-			} while (error);
+			}
+
+		} while (error);
 		return num;
-	}	
-	
-	public static int []multiArray (int []array, int num){
-		
-		int []array2=new int[array.length];
-		
-		for(int f=0;f<array.length;f++){
-			array2[f]=array[f]*num;
+	}
+
+	public static int[] multiArray(int[] array, int num) {
+
+		int[] array2 = new int[array.length];
+
+		for (int f = 0; f < array.length; f++) {
+			array2[f] = array[f] * num;
 		}
 		return array2;
 	}
-	
-	public static void imprimeArray(int []array){
+
+	public static void imprimeArray(int[] array) {
 		int f;
 		System.out.print("[");
-		for(f=0;f<array.length-1;f++){
+		for (f = 0; f < array.length - 1; f++) {
 			System.out.print(array[f] + "\t ");
-		}System.out.println(array[f] + "]");
+		}
+		System.out.println(array[f] + "]");
 	}
 }
-
-
